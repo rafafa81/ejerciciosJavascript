@@ -9,10 +9,13 @@
     </body>
     <script>
         var inicio=["unacadena",3,9,1,10,500,1,10,true]
-        inicio.forEach(
-            function(elemento,indice,array){
-                console.log(elemento);
+        for(i=0;i<inicio.length;i++){
+            if(typeof(inicio[i])!="number"){
+                inicio.splice(i,1);
             }
-        );
+        }
+        for(i=0;i<inicio.length;i++){
+            
+        }
     </script>
 </html>
