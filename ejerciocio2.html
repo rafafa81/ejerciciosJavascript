@@ -8,24 +8,26 @@
         
     </body>
     <script>
-        var inicio=["unacadena",3,9,1,10,500,1,10,true]
-        var completo=false;
+        var inicio=["unacadena",3,9,1,10,500,1,10,50,66,true,88,5]
+        var incompleto=true;
         for(i=0;i<inicio.length;i++){
             if(typeof(inicio[i])!="number"){
                 inicio.splice(i,1);
             }
         }
-        while(completo){
+        while(incompleto){
+            let contador=0;
             for(i=0;i<inicio.length;i++){
-                if(i!=0){
-                    if(inicio[i]>inicio[i-1]){
+                if(i>0 && i<inicio.length){
+                    if(inicio[i]<inicio[i-1]){
                         let temporal=inicio[i-1];
                         inicio[i-1]=inicio[i];
                         inicio[i]=temporal;
-                        completo=(i==inicio.length-1)?true:false;
+                        contador++;                        
                     }
-                }
+                }    
             }
+            incompleto=(contador==0)?false:true;
         }
         console.log(inicio);
     </script>
