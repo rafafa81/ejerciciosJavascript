@@ -8,7 +8,7 @@
         
     </body>
     <script>
-        var inicio=["unacadena",3,9,1,10,500,1,10,50,66,true,88,5]
+        var inicio=["unacadena",3,9,1,10,500,1,10,true]
         var incompleto=true;
         for(i=0;i<inicio.length;i++){
             if(typeof(inicio[i])!="number"){
@@ -16,7 +16,6 @@
             }
         }
         while(incompleto){
-            let contador=0;
             incompleto=false;
             for(i=0;i<inicio.length;i++){
                 if(i>0 && i<inicio.length){
