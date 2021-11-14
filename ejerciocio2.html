@@ -17,17 +17,17 @@
         }
         while(incompleto){
             let contador=0;
+            incompleto=false;
             for(i=0;i<inicio.length;i++){
                 if(i>0 && i<inicio.length){
                     if(inicio[i]<inicio[i-1]){
                         let temporal=inicio[i-1];
                         inicio[i-1]=inicio[i];
                         inicio[i]=temporal;
-                        contador++;                        
+                        incompleto=true;                        
                     }
                 }    
             }
-            incompleto=(contador==0)?false:true;
         }
         console.log(inicio);
     </script>
