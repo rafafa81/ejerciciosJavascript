@@ -9,13 +9,24 @@
     </body>
     <script>
         var inicio=["unacadena",3,9,1,10,500,1,10,true]
+        var completo=false;
         for(i=0;i<inicio.length;i++){
             if(typeof(inicio[i])!="number"){
                 inicio.splice(i,1);
             }
         }
-        for(i=0;i<inicio.length;i++){
-            
+        while(completo){
+            for(i=0;i<inicio.length;i++){
+                if(i!=0){
+                    if(inicio[i]>inicio[i-1]){
+                        let temporal=inicio[i-1];
+                        inicio[i-1]=inicio[i];
+                        inicio[i]=temporal;
+                        completo=(i==inicio.length-1)?true:false;
+                    }
+                }
+            }
         }
+        console.log(inicio);
     </script>
 </html>
