@@ -10,26 +10,26 @@
     <script>
         var numeroDeElementos=5;
         var arrayFib=new Array();
-        if(numeroDeElementos>=0){
+        if(numeroDeElementos>=0){ //Validates number of elements is positive 
             for(i=0;i<=numeroDeElementos;i++){
                 switch(i){
-                    case 0 : 
+                    case 0 :  //This adds the 0 element for future operations
                         arrayFib.push(i);
                         break;
-                    case 1:
+                    case 1:  //This adds the 1 element for future operations
                         arrayFib.push(i);
                         break;
-                    default:
+                    default:  //Adds the total of the last two number as a new element
                         arrayFib.push((arrayFib[i-2])+(arrayFib[i-1]));
                 }
             }
-            arrayFib.forEach(
+            arrayFib.forEach( //Prints the elements of the array
                 function(elemento,indice,array){
                     console.log("Elemento en el indice "+indice+" = "+elemento);
                 }
             );
         }
-        else{
+        else{  //the number of elements must be a posistive number
             Console.log("El numero de elementos debe ser positivo");
         }
     </script>
