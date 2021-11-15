@@ -10,24 +10,24 @@
     <script>
         var inicio=["unacadena",3,9,1,10,500,1,10,true]
         var incompleto=true;
-        for(i=0;i<inicio.length;i++){
+        for(i=0;i<inicio.length;i++){ //This for deletes all non number elements
             if(typeof(inicio[i])!="number"){
                 inicio.splice(i,1);
             }
         }
-        while(incompleto){
-            incompleto=false;
+        while(incompleto){ // Every time checks if there was a change in the array
+            incompleto=false;  // It assumes at the beginning of the while that there wasnt any change 
             for(i=0;i<inicio.length;i++){
-                if(i>0 && i<inicio.length){
-                    if(inicio[i]<inicio[i-1]){
+                if(i>0 && i<inicio.length){ // the 0 element cannot be checked so it skip it 
+                    if(inicio[i]<inicio[i-1]){ // validates if the current element is lower than the last one before
                         let temporal=inicio[i-1];
                         inicio[i-1]=inicio[i];
                         inicio[i]=temporal;
-                        incompleto=true;                        
+                        incompleto=true; // Change the value to true creating another loop to validate                       
                     }
                 }    
             }
         }
-        console.log(inicio);
+        console.log(inicio); // prints the array on the console
     </script>
 </html>
