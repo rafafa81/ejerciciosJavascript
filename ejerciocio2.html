@@ -18,7 +18,7 @@
         while(incompleto){ // Every time checks if there was a change in the array
             incompleto=false;  // It assumes at the beginning of the while that there wasnt any change 
             for(i=0;i<inicio.length;i++){
-                if(i>0 && i<inicio.length){ // the 0 element cannot be checked so it skip it 
+                if(i>0 && i){ // the 0 element cannot be checked so it skip it 
                     if(inicio[i]<inicio[i-1]){ // validates if the current element is lower than the last one before
                         let temporal=inicio[i-1];
                         inicio[i-1]=inicio[i];
